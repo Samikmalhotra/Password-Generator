@@ -14,6 +14,17 @@ const randomFunc = {
     symbol: getRandomSymbol
 };
 
+generate.addEventListener('click', () => {
+	const length = +lengthEl.value;
+	const hasLower = lowercaseEl.checked;
+	const hasUpper = uppercaseEl.checked;
+	const hasNumber = numbersEl.checked;
+	const hasSymbol = symbolsEl.checked;
+	
+	resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+});
+
+
 const getRandomLower = () => {
     return String.fromCharCode(Math.floor(Math.random()*26) + 97);
 }
